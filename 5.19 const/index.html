@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>朋友们</title>
+</head>
+
+<body>
+  <script>
+    //const 不能改：是引用地址不能改
+    //通过引用能改
+    let age = 18;
+    // const friends = [
+    //   {
+    //   }
+    // ];
+
+    const friends = [
+      {
+        name: 'xw',
+        hometown: '上饶',
+        college: '湖南工业大学'
+      },
+      {
+        name: 'xx',
+        hometown: '赣州'
+      },
+    ];
+    // 数组操作（大厂常考）
+    friends.push({
+      name: "xd",
+      hometown: "宜春"
+    })
+
+    const newFriends = friends;
+    newFriends.push({
+      name: "xs",
+      hometown: "宜春"
+    })
+
+    //数组 -> 栈 队列 
+    newFriends.unshift({
+      name: "xm",
+      hometown: "宜春"
+    })
+
+     //可以
+    newFriends.pop()
+    newFriends.shift()
+
+    //两个指向同一个地址,所以会改变
+  </script>
+</body>
+
+</html>
+
+
+堆与栈的普及
+栈：
+1.栈是一种线性结构，先进后出
+2.栈内存的大小是固定的，由系统分配（硬盘，速度慢）
+举例解释说明
+在堆里为什么能修改
+
+//复杂数据类型栈中存的是地址，地址指向堆中的数据，所以改变了
+Js是动态的,对象可能会变化，所以对象的地址是不变的，但是对象中的属性是可以改变的
