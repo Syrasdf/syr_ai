@@ -50,3 +50,7 @@
   - Coplit 协助编程
 
 - git 版本控制
+- git add . 把所有文件添加到暂存区
+- git commit -m "注释" 
+- git push 把本地仓库的文件推送到远程仓库
+
