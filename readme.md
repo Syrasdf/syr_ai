@@ -53,7 +53,7 @@ python main.py
   - Prompt Engineering（**编程**）
   - 过一个身份，像一个人一样思考
   - 给个具体任务
-  - 细化流程，清晰准确
+   - 细化流程，清晰准确
   - 遵守什么规则，不要做什么
   例1：请根据  `/d:/lesson_si/aigc/instruction.txt` 的需求，帮我开发对应的chrome的扩展程序，并且实现功能：点击按钮，修改背景颜色
 
