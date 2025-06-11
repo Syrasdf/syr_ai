@@ -1,0 +1,20 @@
+{
+  "name": "lesson_si",
+  "version": "1.0.0",
+  "description": "这是一个基于人工智能的健康管理助手，能够为用户提供个性化的健康建议、饮食计划和运动指导。",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Syrasdf/syr_ai.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Syrasdf/syr_ai/issues"
+  },
+  "homepage": "https://github.com/Syrasdf/syr_ai#readme"
+}
