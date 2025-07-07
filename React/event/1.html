@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS DOM2 事件机制</title>
+
+  <style>
+    #parent {
+      width: 200px;
+      height: 200px;
+      background-color: rgb(148, 204, 251);
+    }
+    #child {
+      width: 100px;
+      height: 100px;
+      background-color: rgb(246, 145, 200);
+    }
+  </style>
+
+</head>
+
+<body>
+  <!-- 两个元素时不对的 -->
+    <div id="parent">  
+      <div id="child"></div>
+    </div>
+
+    <script>
+      // html, css , js 各司其职
+      // 行类样式少用
+      // js 事件也不要用DOM 0 ，html ， js  耦合在一起
+      // DOM 0 和 DOM2 混用,不好维护
+      // 所以我们使用addEventListener 统一使用useCapture能力
+      document.getElementById('parent')
+          .addEventListener('click', function(event) {
+            console.log('父元素被点击了')
+          }, true)
+      document.getElementById('child')
+          .addEventListener('click', function(event) {
+            console.log('子元素被点击了')
+          }, true)
+    </script>
+</body>
+
+</html>
