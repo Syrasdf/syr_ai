@@ -21,8 +21,10 @@
   多列
 
 - 页面的显示 = 文档流 + 页面布局（弹性、浮动...） + 盒模型（标准，怪异）
+box-sizing border-box（IE）
 离开文档流 （position:absolute） 
-  
+
+z-index 负责立体
 
 
   
