@@ -1,0 +1,23 @@
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  text-align: center;
+  /* 让容器内所有文字都居中 */
+}
+
+.container h1 {
+  text-align: center;
+}
+
+.container p {
+  line-height: 1.6;
+  text-align: center;
+  /* 段落居中 */
+}
+
+.container .more {
+  display: inline-block;
+  text-align: center;
+  /* 链接居中 */
+}
