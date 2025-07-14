@@ -19,5 +19,8 @@
   "homepage": "https://github.com/Syrasdf/syr_ai#readme",
   "devDependencies": {
     "stylus": "^0.64.0"
+  },
+  "dependencies": {
+    "react-router-dom": "^7.6.3"
   }
 }
