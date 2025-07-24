@@ -1,6 +1,7 @@
 import jwt from 'jsonwebtoken';
 // 安全性 编码的时候加密
 // 解码的时候用于解密
+// 加密的字符串 密钥
 const secret = '!@#$%^&*()_+';
 // login 模块 mock 
 export default [
@@ -40,7 +41,8 @@ export default [
       method:'get',
       response:(req,res)=>{
         // 用户端 token headers
-        const token = req.headers["authorization"];
+        const token = req.headers["authorization"].split(' ')[1];
+        console.log(token)
         try {
           const decode = jwt.decode(token,secret);
           console.log(decode)
@@ -56,7 +58,7 @@ export default [
         }
 
         return {
-          token 
+          token,
         }
       }
     }
