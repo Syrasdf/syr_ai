@@ -1,5 +1,20 @@
-.box{
-  width: 200px;
-  height: 200px;
-  background: blue;
+/* 通用样式 */
+.flex {
+  display: flex;
 }
+.flex-col {
+  flex-direction: column;
+}
+.h-screen {
+  height: 100vh;
+}
+h-all {
+  height: 100%;
+}
+.mt-2 {
+  margin-top: 8px;
+}
+.mt-3 {
+  margin-top: 12px;
+}
+
