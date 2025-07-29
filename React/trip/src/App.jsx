@@ -14,6 +14,7 @@ import {
 } from 'react-router-dom'
 import MainLayout from '@/components/MainLayout'
 import BlankLayout from '@/components/BlankLayout'
+import Loading from '@/components/Loading'
 
 const Home = lazy(() => import('@/pages/Home'))
 const Discount = lazy(() => import('@/pages/Discount'))
@@ -53,10 +54,8 @@ function App() {
           </Route>
         </Routes>
       </Suspense>
-
-
     </>
-  )
+  );
 }
 
-export default App
+export default App;

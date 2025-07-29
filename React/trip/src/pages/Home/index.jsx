@@ -1,4 +1,4 @@
-import useTitle from '../../hooks/useTitle.js'
+import useTitle from '@/hooks/useTitle'
 
 const Home = () => {
   useTitle('奶龙首页')

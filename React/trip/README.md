@@ -126,11 +126,15 @@ README.MD 很重要 方便面试管
         - react-vant + @react-vant/icons
         - value + onChange 响应式
         - 直接点击链接分享 active 的设置
-
-- chatbot
-    - llm 模块 chat 封装
-    - 迭代chat ，支持任意模型
-
+    - chatbot
+        - llm 模块 chat 封装
+        - 迭代chat ，支持任意模型
+- search 
+    - 防抖
+    - api
+         GoogleSuggest
+    - localStorage
+     
 ## 项目亮点和难点
 - 前端智能
     - chat 函数
@@ -177,6 +181,8 @@ git -提交 完成旅游聊天机器人开发
 
 ## 通用组件开发
 - Loading 
+    - 居中方案
+         position:fixed + trlrb0 + margin auto
     - React.memo 无状态组件,不重新渲染
     - animation
 

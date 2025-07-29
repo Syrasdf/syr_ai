@@ -20,7 +20,7 @@ import {
 import styles from './account.module.css';
 import {
     generateAvatar
-} from '@llm'
+} from '@/llm'
 
 const Account = () => {
     const [userInfo, setUserInfo] = useState({
@@ -33,11 +33,11 @@ const Account = () => {
     const [showActionSheet, setShowActionSheet] = useState(false);
     const handleAction = async (e) => {
         console.log(e)
-        if(e.type === 1) {
-          // AI 生成头像
+        if (e.type === 1) {
+            // AI 生成头像
             const newAvatar = await generateAvatar()
-        }else if(e.type === 2) {
-          // 图片上传
+        } else if (e.type === 2) {
+            // 图片上传
             setShowActionSheet(false)
         }
     }
@@ -45,23 +45,23 @@ const Account = () => {
         {
             name: 'AI生成头像',
             color: '#123123',
-            type:1
+            type: 1
         },
         {
             name: '上传头像',
             color: '#123123',
-            type:2
+            type: 2
         }
     ]
     return (
         <div className={styles.container}>
             <div className={styles.user}>
-                <Image 
+                <Image
                     round
-                    width= "64px"
+                    width="64px"
                     height="64px"
                     src={userInfo.avatar}
-                    style={{cursor: 'pointer'}}
+                    style={{ cursor: 'pointer' }}
                     onClick={() => setShowActionSheet(true)}
                 />
                 <div className="ml4">
@@ -80,7 +80,7 @@ const Account = () => {
                 </CellGroup>
 
                 <CellGroup inset className="mt2">
-                <Cell title="设置" icon={<SettingO />} isLink />
+                    <Cell title="设置" icon={<SettingO />} isLink />
                 </CellGroup>
             </div>
             <ActionSheet
