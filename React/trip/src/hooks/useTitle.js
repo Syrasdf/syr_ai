@@ -5,11 +5,11 @@ import { useEffect } from 'react';
  * @param {string} title - 要设置的页面标题
  */
 const useTitle = (title) => {
-  useEffect(() => {
+  // useEffect(() => {
     if (title) {
       document.title = title;
     }
-  }, [title]);
+  // }, [title]);
 };
 
 export default useTitle; 
