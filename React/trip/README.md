@@ -136,7 +136,33 @@ README.MD 很重要 方便面试管
     - localStorage
 - 瀑布流
     - 小红书等主流App的内容浏览用户体验产品
-         两列、图片高度不一致
+         两列、图片高度不一致、落差感
+         滚动加载更多，图片懒加载
+    - 接口
+        /api/images?page=${n} 支持翻页
+        唯一id  page + index
+        随机图片  高度随机
+    - images 怎么放到两列中？ MVVM
+    数据驱动界面（2列） 奇偶
+    - 加载更多 位于盒子的底部的元素 通过使用 IntersectionObserver
+    观察是否出现在视窗， 性能更好，使用了观察者模式
+    - 为什么使用唯一的key？
+    防止重新渲染
+    - 还可以新增一个下拉刷新
+    react-vant 组件库 配合我们的接口
+    - 组件卸载时，直接使用  observer.disconnect(); 释放资源，防止内存泄漏
+    - key id 下拉刷新
+    - 使用 IntersectionObserver 再次图片懒加载
+- toast 组件封装
+    - 需要自定义，UI组件不满足需求
+    - UI props
+    - JS 显示出来 跨层级通信
+        观察者
+    - mitt eventBus 事件总线
+       - 实例化 mitt()
+       - on（自定义事件名称，callback）
+       - emit （自定义事件的名称，参数）
+       组件通过监听一个自定义事件，实现一个基于事件的组件通信
 ## 项目亮点和难点
 - 前端智能
     - chat 函数
@@ -163,23 +189,55 @@ README.MD 很重要 方便面试管
     - 热门推荐 + 相关商品（产品）
     - SPA 单页应用 页面不刷新
     - 骨架屏 不用让用户等待了
+    - 文件上传的preview html5 FileReader
+- 智能生成图片
+    - 产品  
+    冰球社群的宠物智能生成运动员图片
+    社交属性
+    商业价值
+    技术服务
+    coze 工作流 智能编排AI 流程 编程一种
+    - api 调用
     
+   - 设计工作流
+     - 创建工作流 ani_pic
+       上传宠物照片，生成宠物曲棍球运动员的照片
+     - 代码节点||数据库节点
+       参数校验和逻辑功能，返回运行的结果
+     - 图生成流程
+       - 图片理解插件 计算机视觉
+       - 大模型 特征提取
+       - workflow_id=7533135055209365558
+       - token
+       - coze 图片要先上传到coze中
+           uploadUrl + token + new
+           append(file)
+           拿到file_id
+       - workflowUrl + workflow_id + token
+           工作流需要的参数
 ##  项目遇到过什么问题，怎么解决的
 - chat message 遇到 message覆盖问题
 - 闭包陷阱
     一次事件里面，两次setMessages()
-
-git -提交 完成旅游聊天机器人开发
-
+- 升级瀑布流？
+    - 骨架屏
+    - 奇偶images 两列分配可能有时候会像天残脚一样，不好看，随机
+        两个响应式数组，判断哪一列高度更少，将新得到的img加入那个数组
+    - intersectionObserver 用的两次，重复了，dry 原则 封装？
+        hooks 封装
 - 自定义hooks
     - useTitle
     一定要设置
 
 - es6 特性使用
+    tabbar 的高亮
     - arr.findInddex
     - str.startsWith
     - promise
-
+    瀑布流随机数据生成
+    - Array.from({length:pageSize},(_,i)=>({
+        
+    }))
 - 项目的迭代
     - 功能由浅入深
     - chatbot deepseek 简单chat

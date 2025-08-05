@@ -1,5 +1,16 @@
 import Mock from 'mockjs';
 
+// 每页50个
+const getImages = (page,pagesize=10) => {
+  return Array.from({length:pageSize},(_,i) =>({
+    id:`${page}-${i}`,
+    width:Mock.Random.integer(300,600),
+    height:Mock.Random.integer(300,600),
+    url:Mock.Random.image('300*400',Mock.Random.color(),'#fff')
+    
+  }))
+}
+
 export default [
   {
     url: '/api/banners',
@@ -105,6 +116,18 @@ export default [
         code: 0,
         data: randomData
       }
+    }
+  },
+  {
+    // ?page=1 queryString
+    url:'/api/imaeges',
+    method:'get',
+    response:({query}) => {
+        const page = Number(query.psge)|| 1;
+        return {
+            code:0,
+            data: getImages(page)
+        }
     }
   }
 ]
