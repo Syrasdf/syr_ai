@@ -28,21 +28,22 @@
 - 为什么要学习跨域
   - 前后端分离是日常开发的形式，端口或域名不一样
   - CORS Policy 同源策略
-    浏览器端的机制
-    Cross-Origin Resource Sharing
+      浏览器端的机制
+      Cross-Origin Resource Sharing
+
   - 跨域请求被block掉了  
-    请求到达了服务器吗
-    到达了
-    响应被浏览器抛弃了 block 掉了响应
-    浏览器的CORS 机制
+      请求到达了服务器吗
+      到达了
+      响应被浏览器抛弃了 block 掉了响应
+      浏览器的CORS 机制
   - 安全问题？
     - 前端（千千万万的用户）的安全，
     - 跨源的，可能不一定被信任
 
   - 怎么解决跨域？
     - 即拿到cross origin 的资源，同时有不违反 CORS 机制
-    fetch/xhr 被CORS 管着了
-    Cookie/localStorage 被 CORS 管着了
+      fetch/xhr 被CORS 管着了
+      Cookie/localStorage 被 CORS 管着了
     - img script link 可以跨域
     - 不用被管着的fetch/xhr/axios，用script
 
@@ -56,6 +57,17 @@
       - 在执行时将数据传给函数
     - 需要后端的配合
   - 返回json
-  JSON 前端需要后端提供的JSON数据
-  Padding 
+    JSON 前端需要后端提供的JSON数据
+    Padding 
 
+- JSONP 利用了 script 可以跨域访问
+  - 前端使用script src=跨域的资源请求地址
+  - 需要后端配合，返回的 JSON 外面包含着函数
+  - 页面上有个函数在等待
+  - 较为复杂，能不能封装一下？
+
+- 手写JSONP
+  - 获取动态数据，script 标签原来设计用于加载静态数据JS
+  - 后端配合解析 script url get 请求中的callback参数
+  请求A、请求B...
+  - 前端封装
